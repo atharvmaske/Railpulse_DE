@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+exclude = [".venv", "__pycache__", "dbt_transform"]
+
+[tool.pytest.ini_options]
+testpaths = ["ingestion/tests", "tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "--cov=ingestion --cov-report=term-missing -v"
+markers = [
+    "integration: marks tests as integration tests",
+]

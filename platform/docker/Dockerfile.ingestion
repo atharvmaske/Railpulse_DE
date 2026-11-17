@@ -1,0 +1,25 @@
+FROM python:3.11-slim-bullseye
+
+WORKDIR /app
+
+RUN pip install --upgrade pip setuptools wheel
+
+RUN pip install --no-cache-dir \
+    requests==2.31.0 \
+    protobuf==4.25.3 \
+    gtfs-realtime-bindings==1.0.0
+
+RUN pip install --no-cache-dir \
+    confluent-kafka==2.3.0
+
+RUN pip install --no-cache-dir \
+    pydantic==2.6.4 \
+    pydantic-settings==2.2.1 \
+    prometheus-client==0.20.0 \
+    python-dotenv==1.0.1
+
+COPY ingestion/ ./ingestion/
+
+ENV PYTHONPATH=/app
+
+CMD ["python", "-m", "ingestion.main"]

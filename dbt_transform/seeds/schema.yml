@@ -1,0 +1,25 @@
+version: 2
+
+seeds:
+  - name: sample_trip_delays
+    description: "Sample trip delay data for development and testing"
+    config:
+      schema: gold
+      column_types:
+        id: varchar
+        delay_seconds: integer
+        event_date: date
+        ingested_at: timestamptz
+        created_at: timestamptz
+
+  - name: sample_vehicle_positions
+    description: "Sample vehicle position data for development and testing"
+    config:
+      schema: gold
+      column_types:
+        id: varchar
+        latitude: double precision
+        longitude: double precision
+        speed: double precision
+        recorded_at: timestamptz
+        created_at: timestamptz

@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: railpulse_raw
+    description: "Gold serving layer — populated by pipeline_loop.py"
+    schema: gold
+    tables:
+      - name: trip_delays
+        identifier: trip_delays
+        columns:
+          - name: id
+            tests: [not_null]
+          - name: trip_id
+            tests: [not_null]
+          - name: event_date
+            tests: [not_null]
+
+      - name: vehicle_positions
+        identifier: vehicle_positions
+        columns:
+          - name: id
+            tests: [not_null]
+          - name: vehicle_id
+            tests: [not_null]
+
+      - name: service_alerts
+        identifier: service_alerts

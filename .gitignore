@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# dbt
+dbt_transform/target/
+dbt_transform/dbt_packages/
+dbt_transform/logs/
+dbt_transform/profiles.yml
+dbt_transform/.user.yml
+
+# Airflow
+airflow/logs/
+airflow/plugins/__pycache__/
+
+# Data files
+datalake/
+*.parquet
+*.avro
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# Docker local overrides
+*.override.yml
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
